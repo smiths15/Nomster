@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # Adding rails_12factor
 gem 'rails_12factor', group: :production 
 
+#ruby version
+ruby '2.3.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.9'
 # Use postgresql as the database for Active Record
