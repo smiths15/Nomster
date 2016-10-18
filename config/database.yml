@@ -10,13 +10,13 @@ default: &default
 
 development:
   <<: *default
-  database: nomster_development
+  database: BakedNoms_development
  
 test:
   <<: *default
-  database: nomster_test
+  database: BakedNoms_test
 
 production:
   <<: *default
-  database: nomster_production
+  database: BakedNoms_production
   
