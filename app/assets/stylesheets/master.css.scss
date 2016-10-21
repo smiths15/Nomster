@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Wendy+One');
 
 .navbar.navbar-inverse {
 border-radius: 0;
@@ -26,9 +27,13 @@ h1, h2, h3, h4, h5, h6 {
 body {
   background: url('/assets/muffin.jpg') no-repeat center center fixed;
   font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
-
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #f0c078;
+  font-family: 'Wendy One', sans-serif;
 }
