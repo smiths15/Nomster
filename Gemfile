@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#Adding Kaminari pagination
+gem 'kaminari'
+
 # Adding rails_12factor
 gem 'rails_12factor', group: :production 
 
