@@ -15,6 +15,9 @@ class PlacesController < ApplicationController
   def about
   end
 
+  def search
+  end
+
   private
 
   def place_params

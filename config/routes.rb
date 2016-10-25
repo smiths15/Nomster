@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'about', to: 'places#about'
 
+  get 'search', to: 'places#search'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
