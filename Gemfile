@@ -7,6 +7,10 @@ gem 'kaminari'
 # Adding rails_12factor
 gem 'rails_12factor', group: :production 
 
+#Adding for Devise gem for user log-in
+
+gem 'devise', '>=3.2.4'
+
 #ruby version
 ruby '2.3.0'
 

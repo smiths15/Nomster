@@ -1,3 +1,13 @@
 <div>
-<!--add search box on top of page here-->
+<%=form_tag(places_path, method: "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Baked Noms" %>
+<%= submit_tag "Search", name: nil %> 
+<% end %>
+
+<% if @places.blank? %>
+<h4>There are no Baked Noms that fit that description <span> <%=params[:search] %>.</span>
+</h4>
+<% end %>
+
 </div>
+

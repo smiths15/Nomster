@@ -16,6 +16,13 @@ class PlacesController < ApplicationController
   end
 
   def search
+    @places = Place.all
+    if params[:search]
+      @places = Place.search(params[search]).order("created_at DESC")
+    else
+      @places = Place.all.order("created_at DESC")
+    end
+
   end
 
   private
