@@ -1,6 +1,5 @@
 class Place < ActiveRecord::Base
-end
-
-def self.search(search)
-  where("name ILIKE ? OR address ILIKE ? or description ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+  def self.search(search)
+    self.where("name ILIKE ? OR address ILIKE ? or description ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+  end
 end
