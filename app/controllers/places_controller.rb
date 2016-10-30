@@ -16,9 +16,11 @@ class PlacesController < ApplicationController
   end
 
   def search
-    if params[:search]
+    if params[:search].blank?  
+      flash[:error] = "Please make a valid entry"
+      else 
       @places = Place.search(params[:search]).page(params[:page]).per(5)
-      render :index
+      render :index 
     end
   end
 
