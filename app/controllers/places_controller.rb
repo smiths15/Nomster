@@ -18,10 +18,11 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
   end
 
   def search
-    if params[:search].blank? 
-      flash[:error] = "Please make a valid entry"
-      else 
-      @places = Place.search(params[:search]).page(params[:page]).per(5)
+    @places = Place.search(params[:search]).page(params[:page]).per(5)
+    
+    if @places.empty? 
+      flash[:error] = "Please make a valid entry"  
+
       render :index 
     end
   end
