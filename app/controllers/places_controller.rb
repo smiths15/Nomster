@@ -10,19 +10,22 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
   end
   
   def create
-    current_user.places.create(place_params)
-    redirect_to root_path
+    @place = current_user.places.create(place_params)
+    if @place.valid?
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end 
  
   def about
   end
 
-  def search
-    @places = Place.search(params[:search]).page(params[:page]).per(5)
-    
-    if @places.empty? 
-      flash[:error] = "Please make a valid entry"  
-
+  def search    
+    @places = Place.search(params[:search]).page(params[:page]).per(5) if params[:search]
+    if @places.blank? 
+      flash[:notice] = "Please make a valid entry." 
+    else
       render :index 
     end
   end
@@ -47,7 +50,11 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
     end
 
     @place.update_attributes(place_params)
-    redirect_to root_path
+     if @place.valid?
+      redirect_to root_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
 def destroy
