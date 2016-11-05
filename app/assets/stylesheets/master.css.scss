@@ -72,6 +72,12 @@ body {
   margin-top: 10px;
 }
 
-@media (max-width: 480px) {
-  
+@media (max-width: 480px) { 
+}
+
+.has-error {
+  color: #ff3333;
+  background-color: #FFEEEE;
+  border-radius:3px;
+  padding: 8px;
 }
