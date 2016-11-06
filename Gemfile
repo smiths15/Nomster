@@ -1,4 +1,9 @@
 source 'https://rubygems.org'
+
+#Adding figaro to store API bing key into an environment variable
+gem 'figaro', '>= 1.0.0'
+#Adding geocoder gem to convert string address to lattitude and longitude coordinates
+gem 'geocoder', '1.3.4'
 #Adding form
 gem 'simple_form'
 #Adding Kaminari pagination
@@ -8,7 +13,6 @@ gem 'kaminari'
 gem 'rails_12factor', group: :production 
 
 #Adding for Devise gem for user log-in
-
 gem 'devise', '>=3.2.4'
 
 #ruby version
