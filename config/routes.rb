@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'places#index'
   resources :places do
-    resources  :comments, only: :create
+    resources  :comments, :photos, only: :create
   end
 
   get 'about', to: 'places#about'

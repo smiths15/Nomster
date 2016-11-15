@@ -77,6 +77,36 @@ Add a Comment
 
 <div class="clear"></div>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Add a Photo</h4>
+      </div>
+        <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+          <div class="modal-body">
+            <%= f.input :caption %>
+            <%= f.input :picture %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <%= f.submit 'Add Photo', class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+      </div>  
+    </div>
+  </div>
+
+<!-- Button trigger modal-->
+<button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
+Add a Photo
+</button>
+</div>
+
+<div class="clear"></div>
+
 <% @place.comments.each do |comment| %>
   <div class="col-xs-12 col-sm-6">
     <blockquote>
