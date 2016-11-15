@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#carrierwave gem file to be able to upload files
+gem 'carrierwave', '>= 1.0.0.rc', '<2.0'
 #Adding figaro to store API bing key into an environment variable
 gem 'figaro', '>= 1.0.0'
 #Adding geocoder gem to convert string address to lattitude and longitude coordinates
