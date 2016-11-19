@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#Adding Fog gem so CarrierWave can communicate with AWS
+gem "fog"
+
 #carrierwave gem file to be able to upload files
 gem 'carrierwave', '>= 1.0.0.rc', '<2.0'
 #Adding figaro to store API bing key into an environment variable
