@@ -4,6 +4,11 @@
   <br/><br/>
   </p><%= @place.description %></p>
 
+  <%@place.photos.each do |photo|%>
+    <%= image_tag photo.picture %>
+    <%= photo.caption %>
+  <% end %>
+
   <% if @place.latitude.present? && @place.longitude.present? %>
 
   <script>
