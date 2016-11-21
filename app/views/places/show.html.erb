@@ -4,11 +4,9 @@
   <br/><br/>
   </p><%= @place.description %></p>
 
-  <span class="img">
-   <%@place.photos.each do |photo|%>
-      <%= image_tag photo.picture %>
-    <% end %>
-  </span>
+  <% @place.photos.each do |photo| %>
+    <%= image_tag photo.picture %>
+  <% end %>
 
   <br/><br/>
 
