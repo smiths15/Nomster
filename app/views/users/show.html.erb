@@ -1,9 +1,10 @@
 <div class="booyah-box">
-  <div class= "col-xs-4">
+  <div class= "col-xs-4 uslogo">
     <%= image_tag 'logouser.png' %>
   </div>
 
   <div class= "col-xs-8">
+    <!-- correct the width of the user email and the size of the user logo-->
     <h1><%= @user.email %></h1>
     <h3>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
     <h4><%= @user.comments.count %> total comments</h4>
