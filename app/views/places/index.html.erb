@@ -28,7 +28,6 @@
         A tart of goodness
       </div>
     </div>
-
   </div>
 
   <!-- Controls -->
@@ -44,40 +43,40 @@
 
 
 <% @places.each do |place| %>
-<div class="booyah-box col-xs-10 col-xs-offset-1">
-  <h1><%= link_to place.name, place_path(place) %></h1>
-  <i><%= place.address %></i><br/><br/>
-  <p><%= place.description %></p><br/>
-  
-  <% if place.photos.present? %>
-  <div class="col-xs-12 col-sm-6">
-    <%= link_to image_tag(place.photos.first.picture), place_path(place) %>
-  <% end %> 
+  <div class="booyah-box col-xs-10 col-xs-offset-1">
+    <h1><%= link_to place.name, place_path(place) %></h1>
+    <i><%= place.address %></i><br/><br/>
+    <p><%= place.description %></p><br/>
+    
+    <% if place.photos.present? %>
+    <div class="col-xs-12 col-sm-6">
+      <%= link_to image_tag(place.photos.first.picture), place_path(place) %>
+    <% end %> 
+    </div>
+
+
+    <br/><br/>
+      <% if place.user.present? %>
+      <small> <%= place.user.email %> </small>
+      <% end %>
+
+    <% if place.comments.present? %>
+      <div class="col-xs-12 col-sm-6">
+        <blockquote>
+          <% if place.comments.last.humanized_rating.present? %>
+            <b><%= place.comments.last.humanized_rating %></b> -
+          <% end %>
+          <%= place.comments.last.message %>
+          <small><%= place.comments.last.user.email %></small>
+        </blockquote>  
+      </div>
+    <% end %>
   </div>
 
 
-  <br/><br/>
-    <% if place.user.present? %>
-    <small> <%= place.user.email %> </small>
-  <% end %>
 
-  <% if place.comments.present? %>
-    <div class="col-xs-12 col-sm-6">
-      <blockquote>
-        <% if place.comments.last.humanized_rating.present? %>
-          <b><%= place.comments.last.humanized_rating %></b> -
-          <% end %>
-          <%= place.comments.last.message %>
-        <small><%= place.comments.last.user.email %></small>
-      </blockquote>  
-    </div>
-  <% end %>
-</div>
-
-
-
-<div class="col-xs-10 col-xs-offset-1" style="text-align: center;">
-<%= paginate @places %>
-<% end %>
-</div>
+  <div class="col-xs-10 col-xs-offset-1" style="text-align: center;">
+    <%= paginate @places %>
+    <% end %>
+  </div>
 <% end %>
