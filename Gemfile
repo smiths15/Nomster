@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 #Adding Fog gem so CarrierWave can communicate with AWS
 gem "fog"
